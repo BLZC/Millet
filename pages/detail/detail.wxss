@@ -1,0 +1,33 @@
+.slide-image {
+  width: 100%;
+  height: 800rpx;
+}
+
+.bottom-zz {
+  height: 55px;
+}
+
+.vcontainer {
+  margin: 0 15px;
+  padding: 10px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.cinline {
+  display: inline-block;
+}
+.vsend {
+  width: 15%;
+  text-align: left;
+  color: #999;
+}
+
+.vto {
+  width: 80%;
+}
+
+.vicon {
+  width: 5%;
+  text-align: right;
+}

@@ -1,0 +1,5 @@
+<van-tabs bind:change="onChange">
+    <van-tab class="tabList" wx:for="{{tabList}}" wx:key="id" title="{{item.title}}">
+        {{item.content}}
+    </van-tab>
+</van-tabs>

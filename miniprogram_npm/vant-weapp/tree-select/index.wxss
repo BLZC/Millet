@@ -1,0 +1,70 @@
+@import '../common/index.wxss';
+.van-tree-select {
+  position: relative;
+  font-size: 13px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.van-tree-select__nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 22%;
+  min-width: 80px;
+  background-color: #fff;
+  border-left: 1rpx solid #ddd;
+}
+.van-tree-select__nitem {
+  position: relative;
+  padding: 0 9px 0 15px;
+  line-height: 44px;
+}
+.van-tree-select__nitem--active:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3.6px;
+  background-color: #f44;
+  content: '';
+}
+.van-tree-select__nitem--active {
+  color: #f4a460;
+  font-size: 14px;
+}
+.van-tree-select__nitem--disabled {
+  color: #999;
+}
+.van-tree-select__content {
+  width: 78%;
+  padding-left: 15px;
+  margin-left: 22%;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+.topImg {
+  height: 160rpx;
+  margin: 0 10px;
+}
+.topLabel {
+  text-align: center;
+  margin: 10rpx 10px;
+  color: #999;
+}
+.content-item {
+  margin: 18rpx 10px;
+}
+.van-tree-select__item--disabled {
+  color: #999;
+}
+.van-tree-select__selected {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  bottom: 0;
+  height: 24px;
+  margin: auto 0;
+  line-height: 24px;
+}

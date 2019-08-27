@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "有品推荐",
+  "usingComponents": {
+    "van-tabs": "vant-weapp/tabs",
+    "van-tab": "vant-weapp/tab"
+  }
+}

@@ -1,0 +1,52 @@
+.circlefriends {
+  width: 100%;
+  height: 100%;
+}
+.circlefriends_item {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10rpx 40rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.circlefriends_item_content {
+  margin-left: 115rpx;
+}
+
+.circlefriends_img {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.name {
+  font-weight: 700;
+  color: cornflowerblue;
+}
+
+.time {
+  margin-top: 15rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.ct {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.comment {
+  text-align: right;
+}
+
+.diss-view {
+  display: inline-block;
+}
+
+.comment-img {
+  width: 45rpx;
+  height: 40rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+}

@@ -1,0 +1,4 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<view class="custom-class my-van-col {{ utils.bem('col', [span]) }} {{ offset ? 'van-col--offset-' + offset : '' }}" style="{{ style }}">
+  <slot />
+</view>

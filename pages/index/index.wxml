@@ -1,0 +1,34 @@
+<scroll-view>
+    <view class="my-input-bg">
+        <input class="my-input" disabled placeholder-class="p-class" placeholder="兄弟快去搜一搜" />
+    </view>
+    <view>
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" circular="true" duration="{{duration}}">
+            <block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}">
+                <swiper-item>
+                    <image src="{{item}}" class="slide-image" />
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view>
+        <van-row custom-class="tap-nav" gutter="20">
+            <van-col custom-class="nav-item" span="6" wx:for="{{navList}}" wx:key="ite.id" wx:for-item="item">
+                <view>
+                    <image class="nav-img" src="{{item.imgUrl}}" />
+                </view>
+                <text>{{item.name}}</text>
+            </van-col>
+        </van-row>
+    </view>
+    <view class="my-notice-bar">
+        <van-notice-bar left-icon="volume" text="小米9再升级！发布8GB+256GB大容量尊享版，赠20瓦无线充电器" />
+    </view>
+    <view>
+        <view class="title">今日有品</view>
+        <view>
+            <van-card title-class="card_title" price-class="card_price" desc-class="card_desc" wx:for="{{ypList}}" wx:for-item="item" wx:key="item.id" num="{{item.number}}" price="{{item.price}}" desc="{{item.description}}" title="{{item.title}}" thumb="{{item.imgUrl}}" thumb-mode="scaleToFill" lazy-load="true" linkUrl="{{item.linkUrl}}" />
+        </view>
+    </view>
+    <view class="bottomText">{{bottomText}}</view>
+</scroll-view>

@@ -1,0 +1,27 @@
+<!-- about.wxml -->
+<view class="container">
+    <view class="my_msg">
+        <image class="userImg" src="{{userInfo.avatarUrl}}" />
+        <view class="user_msg">
+            <view>{{userInfo.nickName}}</view>
+            <br />
+            <view class="userid">小米ID：1452056278</view>
+        </view>
+    </view>
+    <!-- <view class="wait_develop">内测模块</view> -->
+    <view class="main_content">
+        <view class="content_item" wx:for="{{list}}" wx:for-item="item">
+            <image class="img_item" src="{{item.icon}}" />
+            {{item.name}}
+        </view>
+    </view>
+    <view class="bottom_content">
+        <view class="content_item" wx:for="{{list2}}" wx:for-item="item">
+            <image class="img_item" src="{{item.icon}}" />
+            <view>{{item.name}}</view>
+        </view>
+    </view>
+    <view class="cbottom">
+            —— 本小程序仅作为个人学习使用 ——
+    </view>
+</view>

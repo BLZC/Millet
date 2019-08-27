@@ -1,0 +1,45 @@
+<wxs src="../wxs/utils.wxs" module="utils" />
+<wxs module="tsUtil">
+// 判断子项是否被选中
+function isArray (array) {
+  return array instanceof Array;
+}
+function isActive (activeList, itemId) {
+  if (typeof activeList === 'undefined' || activeList == null) return false;
+  if (isArray(activeList)) {
+    return activeList.indexOf(itemId) > -1;
+  }
+  else {
+    return activeList === itemId;
+  }
+}
+
+module.exports.isActive = isActive;
+</wxs>
+<view class="van-tree-select" style="height: 100vh">
+  <scroll-view scroll-y class="van-tree-select__nav">
+    <view wx:for="{{ items }}" wx:key="index" class="van-ellipsis main-item-class {{ utils.bem('tree-select__nitem', { active: mainActiveIndex === index, disabled: item.disabled }) }} {{ mainActiveIndex === index ? 'main-active-class' : '' }} {{ item.disabled ? 'main-disabled-class' : '' }}" data-index="{{ index }}" bind:tap="onClickNav">
+      {{ item.text }}
+    </view>
+  </scroll-view>
+  <scroll-view scroll-y class="van-tree-select__content" style="height: 100vh">
+    <view class="topImg">
+      <image style="width: 100%; height: 160rpx" mode='scaleToFill' src="{{topImg}}" />
+    </view>
+    <view class="topLabel">
+      <text>—— {{topLabel}} ——</text>
+    </view>
+    <view class="content-item">
+      <van-row>
+        <van-col span="8" wx:for="{{ subItems }}" wx:key="id" class="tree-select__item" data-item="{{ item }}" bind:tap="onSelectItem">
+          <navigator url="{{item.linkTo}}" hover-class="none">
+            <image style="height: 150rpx; width: 150rpx;" mode='scaleToFill' src="{{item.img}}" />
+            <view style="text-aligh:center; font-size:'26rpx'; margin: 10rpx 0;">
+              {{item.text}}
+            </view>
+          </navigator>
+        </van-col>
+      </van-row>
+    </view>
+  </scroll-view>
+</view>

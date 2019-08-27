@@ -1,0 +1,36 @@
+<scroll-view>
+    <van-radio-group style="margin-left: 15px;" value="{{ radio }}" bind:change="onChange">
+        <view class="item" wx:for="{{lists}}" wx:key="id">
+            <view class="ft1">
+                <view class="btn cinline">
+                    <van-radio name="1" checked-color="red"></van-radio>
+                </view>
+                <view class="img cinline">
+                    <image mode="scaleToFill" style="width:40px; height:40px;" src="{{item.img}}" />
+                </view>
+                <view class="title cinline van-multi-ellipsis--l2">{{item.title}}</view>
+                <view class="number cinline">{{item.number}}</view>
+                <view class="nicon">
+                    <van-icon class="cicon" name="cross" />
+                </view>
+                <view class="price cinline">{{item.price}}元</view>
+            </view>
+            <view class="ft2" wx:for="{{item.children}}" wx:key="id" wx:for-item="vitem">
+                <view class="ptitle cinline">{{vitem.ptitle}}</view>
+                <view class="pcontent cinline">{{vitem.pcontent}}</view>
+                <view class="pbtn cinline">
+                    <van-button type="danger" size="mini">选购</van-button>
+                </view>
+            </view>
+        </view>
+    </van-radio-group>
+    <van-submit-bar price="{{ 3050 }}" button-text="提交订单" bind:submit="onClickButton" tip="{{ true }}">
+        <van-radio-group style="margin-left: 15px;" value="{{ radio }}" bind:change="onChange">
+            <van-radio name="1" checked-color="red">全选</van-radio>
+        </van-radio-group>
+        <view slot="tip">
+            您的收货地址不支持同城送,
+            <text>修改地址</text>
+        </view>
+    </van-submit-bar>
+</scroll-view>

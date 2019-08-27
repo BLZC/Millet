@@ -1,0 +1,5 @@
+<view class="detail-title">
+    <view class="title">{{title}}</view>
+    <view class="description">{{description}}</view>
+    <view class="price">{{price}}元</view>
+</view>

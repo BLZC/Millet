@@ -1,0 +1,21 @@
+<scroll-view class="circlefriends">
+    <view class="circlefriends_item" wx:for="{{list}}" wx:for-item="item">
+        <image src="{{item.img}}" class="circlefriends_img"></image>
+        <view class="circlefriends_item_content">
+            <view class="name">{{item.name}}</view>
+            <view>{{item.content}}</view>
+            <view class="ct">
+                <view class="time">{{item.time}}</view>
+                <view class="comment">
+                    <view class="diss-view" wx:if="{{item.iszan}}">
+                        <image class="comment-img" src="../../images/dianzan.png" bindtap="changeZan" />
+                    </view>
+                    <view class="diss-view" wx:else>
+                        <image class="comment-img" src="../../images/wdianzan.png" bindtap="changeZan" />
+                    </view>
+                    <image class="comment-img" src="../../images/comment.png" bindtap="comment" />
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>

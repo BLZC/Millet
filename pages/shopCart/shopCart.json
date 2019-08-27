@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-submit-bar": "vant-weapp/submit-bar",
+    "van-radio": "vant-weapp/radio",
+    "van-radio-group": "vant-weapp/radio-group"
+  }
+}

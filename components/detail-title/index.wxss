@@ -1,0 +1,13 @@
+.detail-title {
+  margin: 15px;
+}
+
+.description {
+  font-size: 12px;
+  color: #999;
+  padding: 8px 0;
+}
+
+.price {
+  color: red;
+}

@@ -1,0 +1,3 @@
+<!-- <scroll-view class="list"> -->
+<van-tree-select main-item-class="lclass" items="{{ items }}" main-active-index="{{ mainActiveIndex }}" active-id="{{ activeId }}" bind:click-nav="onClickNav" />
+<!-- </scroll-view> -->

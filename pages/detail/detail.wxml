@@ -1,0 +1,53 @@
+<scroll-view>
+    <view>
+        <swiper style="height: 800rpx" indicator-dots="true" autoplay="true" interval="4000" circular="true" duration="1000">
+            <block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}">
+                <swiper-item>
+                    <image src="{{item}}" mode="scaleToFill" class="slide-image" />
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view>
+        <detail-title title="小米CC9e" description="{{description}}" price="1299"></detail-title>
+    </view>
+    <view>
+        <view class="vcontainer">
+            <view class="vsend cinline">送至</view>
+            <view class="vto cinline">南京市栖霞区</view>
+            <view class="vicon cinline">
+                <van-icon name="arrow" />
+            </view>
+        </view>
+        <view class="vcontainer">
+            <view class="vsend cinline">领券</view>
+            <view class="vto cinline">小米cc9专属100元优惠券</view>
+            <view class="vicon cinline">
+                <van-icon name="arrow" />
+            </view>
+        </view>
+        <view class="vcontainer">
+            <view class="vsend cinline">促销</view>
+            <view class="vto cinline">赠</view>
+            <view class="vicon cinline">
+                <van-icon name="arrow" />
+            </view>
+        </view>
+        <view class="vcontainer">
+            <view class="vsend cinline">已选</view>
+            <view class="vto cinline">小米CC9 6GB+64GB 白色恋人</view>
+            <view class="vicon cinline">
+                <van-icon name="arrow" />
+            </view>
+        </view>
+    </view>
+    <view class="bottom-zz"></view>
+    <van-goods-action>
+        <van-goods-action-icon icon="chat-o" text="客服" />
+        <van-goods-action-icon icon="cart-o" text="购物车" info="5" bind:click="navigatorTo"/>
+        <van-goods-action-icon icon="shop-o" text="店铺" />
+        <van-goods-action-button text="加入购物车" type="warning" bind:click="addShopCart" />
+        <van-goods-action-button text="立即购买" />
+    </van-goods-action>
+    <van-action-sheet show="{{ show }}" actions="{{ actions }}" cancel-text="确定" bind:close="onClose" />
+</scroll-view>

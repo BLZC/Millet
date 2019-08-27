@@ -1,0 +1,72 @@
+/* .cinline {
+  display: inline-block;
+} */
+
+.ft1 {
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.btn {
+  width: 6%;
+}
+
+.img {
+  width: 9%;
+}
+
+.title {
+  width: 58%;
+  margin-left: 2%;
+  overflow-wrap: break-word;
+  font-size: 14px;
+}
+
+.number {
+  width: 2%;
+  margin-left: 2%;
+  font-size: 12px;
+  color: #999;
+  padding-top: 7rpx;
+}
+
+.nicon {
+  width: 4%;
+  font-size: 12px;
+  color: #999;
+  padding-top: 10rpx;
+}
+
+.cicon {
+  font-size: 12px;
+  color: #999;
+}
+
+.price {
+  width: 18%;
+  color: red;
+  font-size: 16px;
+}
+
+.ft2 {
+  padding: 10px 10px 10px 30px;
+  background-color: #eee;
+  display: flex;
+  flex-direction: row;
+}
+
+.ptitle {
+  width: 20%;
+  font-size: 14px;
+}
+
+.pcontent {
+  width: 65%;
+  font-size: 12px;
+  color: #999;
+}
+
+.pbtn {
+  width: 15%;
+}
