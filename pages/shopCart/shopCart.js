@@ -1,40 +1,35 @@
+import Dialog from '../../miniprogram_npm/vant-weapp/dialog/dialog'
 Page({
   data: {
     radio: '1',
-    lists: [
-      {
-        img:
-          'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0ce61b71e2f81df62bd0c05aaa901d22.jpg',
-        title: '小米9 全网通版 8GB内存 全息幻彩 蓝 256GB',
-        number: 1,
-        price: 3299,
-        children: [
-          { ptitle: '服务', pcontent: '意外保护129元起' },
-          { ptitle: '服务', pcontent: '意外保护129元起' },
-          { ptitle: '服务', pcontent: '意外保护129元起' }
-        ]
-      },
-      {
-        img:
-          'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0ce61b71e2f81df62bd0c05aaa901d22.jpg',
-        title: '小米9 全网通版 8GB内存 全息幻彩 蓝 256GB',
-        number: 1,
-        price: 3299,
-        children: [{ ptitle: '服务', pcontent: '意外保护129元起' }]
-      },
-      {
-        img:
-          'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0ce61b71e2f81df62bd0c05aaa901d22.jpg',
-        title: '小米9 全网通版 8GB内存 全息幻彩 蓝 256GB',
-        number: 1,
-        price: 3299,
-        children: [{ ptitle: '服务', pcontent: '意外保护129元起' }]
-      }
-    ]
+    lists: []
+  },
+  onShow() {
+    let List = wx.getStorageSync('goodsDetail')
+    console.log(List)
+    this.setData({
+      lists: List
+    })
   },
   onChange(event) {
     this.setData({
       checked: event.detail
+    })
+  },
+  Xgou() {
+    Dialog.alert({
+      title: '标题',
+      message: '弹窗内容'
+    }).then(() => {
+      // on close
+    })
+  },
+  Delete() {
+    Dialog.alert({
+      title: '删除',
+      message: '弹窗内容'
+    }).then(() => {
+      // on close
     })
   }
 })

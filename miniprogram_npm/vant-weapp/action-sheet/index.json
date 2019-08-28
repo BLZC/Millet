@@ -4,6 +4,8 @@
     "van-icon": "../icon/index",
     "van-popup": "../popup/index",
     "van-loading": "../loading/index",
-    "van-button": "../button/index"
+    "van-button": "../button/index",
+    "van-row": "../row/index",
+    "van-col": "../col/index"
   }
 }

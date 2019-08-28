@@ -1,4 +1,4 @@
-<wxs src="../wxs/utils.wxs" module="utils" />
+<!-- <wxs src="../wxs/utils.wxs" module="utils" /> -->
 <van-popup show="{{ show }}" position="bottom" z-index="{{ zIndex }}" overlay="{{ overlay }}" custom-class="van-action-sheet" safe-area-inset-bottom="{{ safeAreaInsetBottom }}" close-on-click-overlay="{{ closeOnClickOverlay }}" bind:close="onClose">
   <view wx:if="{{ title }}" class="van-hairline--bottom van-action-sheet__header">
     {{ title }}
@@ -6,16 +6,29 @@
   </view>
   <view wx:if="{{ actions && actions.length }}">
     <!-- button外包一层view，防止actions动态变化，导致渲染时button被打散 -->
+    <view class="tp1">
+      <van-row>
+        <van-col span="6">
+          <!-- <view class="leftImg"> -->
+          <image style="width: 200rpx; height: 200rpx;" src="https://img.youpin.mi-img.com/miio_album_pics/6618fe665f0163f7e2e664024055d7be.png?w=800&h=800" />
+          <!-- </view> -->
+        </van-col>
+        <van-col span="18">
+          <view class="rightContent">
+            <view class="ft1_price">￥1679</view>
+            <view class="ft1_Selected">已选：{{Selected}}</view>
+          </view>
+        </van-col>
+      </van-row>
+    </view>
     <view wx:for="{{ actions }}" wx:key="index" open-type="{{ item.openType }}" class="{{ utils.bem('action-sheet__item', { disabled: item.disabled || item.loading }) }} van-hairline--top {{ item.className || '' }}" data-index="{{ index }}">
       <block wx:if="{{ !item.loading }}">
         <view class="van-action-sheet__name">{{ item.name }}</view>
         <view wx:if="{{ item.subname }}" class="van-action-sheet__subname">{{ item.subname }}</view>
         <view class="van-action-sheet__list">
-          <van-radio-group value="{{ radio }}" bind:change="onChange">
-            <van-radio class="van-action-sheet__radio" wx:for="{{item.list}}" wx:key="id" wx:for-item="vitem" name="{{vitem.id}}" bind:tap="add">
-              {{vitem.text}}
-            </van-radio>
-          </van-radio-group>
+          <view class="van_item {{vitem.active ? hoverClass : ''}}" wx:for="{{item.list}}" wx:key="{{id}}" wx:for-item="vitem" bindtap="addclass" data-id="{{vitem.id}}" data-parentId="{{item.id}}">
+            {{vitem.text}}
+          </view>
         </view>
       </block>
       <van-loading wx:else size="20px" />

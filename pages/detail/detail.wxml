@@ -44,10 +44,52 @@
     <view class="bottom-zz"></view>
     <van-goods-action>
         <van-goods-action-icon icon="chat-o" text="客服" />
-        <van-goods-action-icon icon="cart-o" text="购物车" info="5" bind:click="navigatorTo"/>
+        <van-goods-action-icon icon="cart-o" text="购物车" info="{{goodsNumber}}" bind:click="navigatorTo" />
         <van-goods-action-icon icon="shop-o" text="店铺" />
         <van-goods-action-button text="加入购物车" type="warning" bind:click="addShopCart" />
         <van-goods-action-button text="立即购买" />
     </van-goods-action>
-    <van-action-sheet show="{{ show }}" actions="{{ actions }}" cancel-text="确定" bind:close="onClose" />
+    <!-- 经测试这部分使用组件会加大开发复杂度 -->
+    <!-- <van-action-sheet show="{{ show }}" cancel-text="确定" bind:close="onClose" /> -->
+    <van-popup show="{{ show }}" position="bottom" z-index="{{ zIndex }}" overlay="{{ overlay }}" custom-class="van-action-sheet" safe-area-inset-bottom="{{ safeAreaInsetBottom }}" close-on-click-overlay="{{ closeOnClickOverlay }}" bind:close="onClose">
+        <!-- <view wx:if="{{ title }}" class="van-hairline--bottom van-action-sheet__header">
+            {{ title }}
+            <van-icon name="close" custom-class="van-action-sheet__close" bind:click="onClose" />
+        </view> -->
+        <view wx:if="{{ actions && actions.length }}">
+            <!-- button外包一层view，防止actions动态变化，导致渲染时button被打散 -->
+            <view class="tp1">
+                <van-row>
+                    <van-col span="6">
+                        <!-- <view class="leftImg"> -->
+                        <image style="width: 200rpx; height: 200rpx;" src="https://img.youpin.mi-img.com/miio_album_pics/6618fe665f0163f7e2e664024055d7be.png?w=800&h=800" />
+                        <!-- </view> -->
+                    </van-col>
+                    <van-col span="18">
+                        <view class="rightContent">
+                            <view class="ft1_price">￥1679</view>
+                            <view class="ft1_Selected">已选：{{Selected}}</view>
+                        </view>
+                    </van-col>
+                </van-row>
+            </view>
+            <view wx:for="{{ actions }}" wx:key="index" open-type="{{ item.openType }}" class="{{ utils.bem('action-sheet__item', { disabled: item.disabled || item.loading }) }} van-hairline--top {{ item.className || '' }}" data-index="{{ index }}">
+                <block wx:if="{{ !item.loading }}">
+                    <view class="van-action-sheet__name">{{ item.name }}</view>
+                    <view wx:if="{{ item.subname }}" class="van-action-sheet__subname">
+                        {{ item.subname }}
+                    </view>
+                    <view class="van-action-sheet__list">
+                        <view class="van_item {{vitem.active ? hoverClass : ''}}" wx:for="{{item.list}}" wx:key="{{id}}" wx:for-item="vitem" bindtap="addclass" data-id="{{vitem.id}}" data-parentId="{{item.id}}">
+                            {{vitem.text}}
+                        </view>
+                    </view>
+                </block>
+                <van-loading wx:else size="20px" />
+            </view>
+        </view>
+        <van-button type="danger" wx:if="{{ cancelText }}" custom-class="van-action-sheet__cancel" hover-stay-time="70" bind:tap="addToShop">
+            {{ cancelText }}
+        </van-button>
+    </van-popup>
 </scroll-view>

@@ -2,73 +2,70 @@
   background-color: #a0522d;
   padding: 30rpx 0;
 }
-
 .my-input {
+  background-color: #fff;
   border: 1rpx solid #a0522d;
   border-radius: 30rpx;
-  height: 60rpx;
+  height: 56rpx;
+  line-height: 56rpx;
   margin: 0 10%;
+  font-size: 28rpx;
+  text-align: center;
+  color: #999;
 }
-
+.weui-icon-search {
+  margin-right: 8px;
+  font-size: inherit;
+}
 .p-class {
   background-color: #fff;
   font-size: 30rpx;
   color: #ddd;
   text-align: center;
 }
-
 .slide-image {
   width: 100%;
   height: 300rpx;
 }
-
 .tap-nav {
   height: 100rpx;
   padding: 5%;
   font-size: 26rpx;
   color: #666;
 }
-
 .nav-item {
   text-align: center;
 }
-
 .nav-img {
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;
   margin-bottom: 5rpx;
 }
-
 .my-notice-bar {
   margin: 20rpx 0;
 }
-
 .bottomText {
   height: 100rpx;
-  font-size:30rpx;
-  line-height:100rpx;
+  font-size: 30rpx;
+  line-height: 100rpx;
   text-align: center;
   background-color: #eee;
-  color:#ddd;
+  color: #ddd;
 }
-
 .title {
   margin-bottom: 10rpx;
   font-size: 32rpx;
   padding-left: 20rpx;
 }
-
 .card_title {
   font-size: 14px;
-  margin:5px 2px;
+  margin: 5px 2px;
 }
-
 .card_desc {
   margin: 5px 2px;
   font-size: 12px;
 }
-
 .card_price {
   font-size: 15px;
 }

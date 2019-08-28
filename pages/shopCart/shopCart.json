@@ -2,6 +2,8 @@
   "usingComponents": {
     "van-submit-bar": "vant-weapp/submit-bar",
     "van-radio": "vant-weapp/radio",
-    "van-radio-group": "vant-weapp/radio-group"
+    "van-radio-group": "vant-weapp/radio-group",
+    "van-swipe-cell": "vant-weapp/swipe-cell",
+    "van-dialog": "vant-weapp/dialog"
   }
 }

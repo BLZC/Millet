@@ -71,13 +71,28 @@
   margin: 15px 0;
   font-size: 13px;
 }
-.van-action-sheet__radio {
-  margin-left: 8px;
-  padding: 6px;
+.van_item {
+  display: inline-block;
+  margin-left: 10rpx;
   background-color: #f5f5f5;
-  border-radius: 5px;
+  padding: 10rpx;
+  border-radius: 10rpx;
 }
-.van-action-sheet__radio:hover {
+.van_item_hover {
   color: red;
   border: 1rpx solid red;
+  padding: 9rpx;
+}
+.rightContent {
+  text-align: left;
+  padding-top: 100rpx;
+}
+.ft1_price {
+  color: red;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+.ft1_Selected {
+  color: #999;
+  font-size: 26rpx;
 }

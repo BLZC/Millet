@@ -1,8 +1,8 @@
-const app = getApp()
+const WXAPI = require('../../wxapi/index.js')
 
 Page({
   data: {
-    imgUrls: [
+    banners: [
       'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6cbfe536492a89e756abcca98652c9bb.jpg?w=2452&h=920',
       'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a1f0eb196c6c65a89ffba6efa4b5679c.jpg?w=2452&h=920',
       'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cefed8336bae62768afeeb6a3b8f55c8.jpg?w=2452&h=920'
@@ -76,5 +76,30 @@ Page({
     autoplay: true,
     interval: 5000,
     duration: 1000
+  },
+  onLoad() {
+    WXAPI.banners({ type: 'index' }).then(res => {
+      if (res.code == 700) {
+        wx.showModal({
+          title: '提示',
+          content: '请在后台添加 banner 轮播图片，自定义类型填写 index',
+          showCancel: false
+        })
+      } else {
+        this.setData({
+          banners: res.data
+        })
+      }
+    })
+  },
+  toSearch() {
+    wx.navigateTo({
+      url: '../search/search',
+      success: result => {},
+      fail: e => {
+        console.log(e)
+      },
+      complete: () => {}
+    })
   }
 })
