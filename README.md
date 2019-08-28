@@ -4,6 +4,6 @@
 
 #### 首页
 
-![](./images/shouye.jpg)
+<img src="./images/shouye.jpg" width="150" height="200" alt="图片描述文字"/>
 
 #### 分类
